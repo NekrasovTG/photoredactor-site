@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Фоторедактор</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="tools">
+            <h1 class="title">Фоторедактор</h1>
+            
+            <div class="filters-group">
+                <h3>Загрузка фото</h3>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
+
+            <div class="filters-group">
+                <h3>Основные настройки</h3>
+                <div class="filters">
+                    <label>
+                        Яркость
+                        <input type="range" id="brightness" min="0" max="200" value="100">
+                    </label>
+                    <label>
+                        Контрастность
+                        <input type="range" id="contrast" min="0" max="200" value="100">
+                    </label>
+                    <label>
+                        Насыщенность
+                        <input type="range" id="saturate" min="0" max="200" value="100">
+                    </label>
+                    <label>
+                        Размытие
+                        <input type="range" id="blur" min="0" max="10" value="0" step="0.1">
+                    </label>
+                </div>
+            </div>
+
+            <div class="filters-group">
+                <h3>Фильтры</h3>
+                <div class="button-group">
+                    <button data-filter="normal">Оригинал</button>
+                    <button data-filter="grayscale">Ч/Б</button>
+                    <button data-filter="sepia">Сепия</button>
+                </div>
+                <div class="button-group">
+                    <button data-filter="vintage">Винтаж</button>
+                    <button data-filter="warm">Теплый</button>
+                    <button data-filter="cold">Холодный</button>
+                </div>
+            </div>
+
+            <div class="filters-group">
+                <h3>Поворот</h3>
+                <div class="button-group">
+                    <button id="rotateLeft">↺ 90°</button>
+                    <button id="rotateRight">↻ 90°</button>
+                </div>
+                <div class="button-group">
+                    <button id="flipHorizontal">⇋ По горизонтали</button>
+                    <button id="flipVertical">⇅ По вертикали</button>
+                </div>
+            </div>
+
+            <div class="filters-group">
+                <h3>Размер</h3>
+                <div class="size-inputs">
+                    <input type="number" id="widthInput" placeholder="Ширина">
+                    <input type="number" id="heightInput" placeholder="Высота">
+                </div>
+                <button id="resizeImage">Изменить размер</button>
+            </div>
+
+            <div class="filters-group">
+                <h3>Сохранение</h3>
+                <select id="saveFormat">
+                    <option value="png">PNG</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="webp">WebP</option>
+                </select>
+                <label>
+                    Качество
+                    <input type="range" id="quality" min="0" max="1" step="0.1" value="0.9">
+                </label>
+                <button id="save" class="save-button">Сохранить</button>
+            </div>
+
+            <button id="reset" class="reset-button">Сбросить</button>
+        </div>
+
+        <div class="image-area">
+            <canvas id="canvas"></canvas>
+            <div class="placeholder">Загрузите изображение</div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
